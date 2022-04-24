@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fake div buttons</title>
+    <style>
+      label {
+        background-color: rgb(240, 240, 240);
+        font-size: 11px;
+        font-family: sans-serif;
+        border: 1px outset rgb(218, 218, 218);
+        line-height: 20px;
+        padding: 0 6px;
+        width: 120px;
+        text-align: center;
+        border-radius: 5px;
+        margin-right: 10px;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      label:hover,
+      label:focus {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h2>Fake buttons</h2> -->
+
+    <!-- <label data-message="This is from the first button" tabindex="0" role="button">Click me!</label>
+    <label data-message="This is from the second button" tabindex="0">Click me too!</label>
+    <label data-message="This is from the third button" tabindex="0">And me!</label> -->
+   <!-- <div for="text" id="hello" tabindex="1" role="button">Input text</div>
+    <input type="file" id="text" required="true" tabindex="-1" /> <br /> -->
+    <div
+      for="fileUpload"
+      tabindex="-1"
+      role="button"
+      onkeydown="hello(event)"
+      id="fileUpload"
+    >
+     <span>
+       <span>
+         <div>
+          * Upload file
+         </div> </span>
+     </span>
+    </div>
+    <label aria-labelledby="fileUpload fileUploadlabel" tabindex="0" for="fileUpload">
+      <span id="fileUpload">File upload Span</span>
+    </label>
+    <input
+      type="file"
+      id="fileUpload"
+      style="
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+      "
+      aria-hidden="true"
+      tabindex="-1"
+      required
+    />
+    <!-- Question text here!1-->
+    <!-- <label
+      class="QuestionText__labelOnTop___2HX1r QuestionText__label___qLDHi"
+      for="fileUpload"
+      id="fileUpload"
+      style="
+        font-family: 'PT Sans', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        color: rgb(4, 21, 50);
+        line-height: 1.3;
+        text-align: left;
+        font-style: normal;
+        background-color: transparent;
+        border-radius: 0px;
+        padding: 5px;
+      "
+      ><span class=""
+        ><span class="GuestSideFormLabels__required___1R8yS">*&nbsp;</span
+        ><span data-cvent-id="label"
+          ><span
+            ><div class="css-vsf5of">
+              <p class="carina-rte-public-DraftStyleDefault-block">
+                Question text
+              </p>
+            </div></span
+          ></span
+        ></span
+      ></label
+    > -->
+
+    <script>
+      const buttons = document.querySelectorAll("label");
+
+      // for(let i = 0; i < buttons.length; i++) {
+      //   addHandler(buttons[i]);
+      // }
+
+      // function addHandler(button) {
+      //   console.log("nutton id");
+      //   button.onclick = function(e) {
+      //     let message = e.target.getAttribute('data-message');
+      //     alert(message);
+      //   }
+      // }
+
+      // document.onkeydown = function(e) {
+      //   if(e.keyCode === 13) { // The Enter/Return key
+      //     console.log(document.activeElement);
+      //     document.activeElement.onclick(e);
+      //   }
+      // };
+      function hello(e) {
+        e = e || window.event;
+        var code = e.keyCode;
+        if (e.code === "Space" || e.code === "Enter") {
+          // The Enter/Return key
+          // returnCallingCode();
+          document.getElementById("fileUpload").click();
+        }
+      }
+      function returnCallingCode() {
+        document.getElementById("fileUpload").click();
+      }
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1 tabindex="0">Hello world</h1>
+
+    <label for="fname">* first name</label>
+    <input type="text" name="name" id="fname" /><br />
+
+    <label for="fileUpload" tabindex="0" role="button" aria-label="">* Upload file 
+        <span style="visibility: hidden;" aria-label="Upload file urvsahi gajjar">
+            hello world xyz
+        </span>
+
+    </label>
+    <input
+      type="file"
+      id="fileUpload"
+      tabindex="-1"
+      aria-hidden="true"
+      aria-required="true"
+      required
+      style="visibility: hidden"
+    />
+    <br />
+    <button>Hello world</button><br />
+    <input type="checkbox" aria-labelledby="prompt" />
+    <span id="prompt"> Save Password </span>
+    <p id="description">Your credentials will not be stored.</p>
+  </body>
+</html> -->
+
+<!-- add to calender dialog -->
+<div aria-describedby="dialogHeader" class="">
+  <div class="AddToCalendarDialog__dialogHeader___1q7m8" id="dialogHeader">
+    <h2 class="">
+      <div
+        data-cvent-id="close"
+        class="AddToCalendarDialog__closeDialog___1nFP7"
+        tabindex="0"
+        role="button"
+      >
+        <span class="Icons-All__container___O_K-B"
+          ><span
+            class="Icons-All__closeDeleteFilled___3mMTd Icons-All__icon___3JBsx"
+            role="img"
+            aria-hidden="true"
+          ></span
+        ></span>
+      </div>
+    </h2>
+  </div>
+</div>
+
+<!-- download calender dialog -->
+<div
+  aria-describedby="dialogHeader"
+  class=""
+  style="background-color: rgb(255, 255, 255); border-radius: 0px"
+>
+  <div
+    class="DownloadCalendarDialog__dialogHeader___1HS47"
+    id="dialogHeader"
+    style="background-color: rgb(221, 226, 230); padding: 15px 1.5625rem"
+  >
+    <h2
+      class=""
+      style="
+        font-family: 'Comic Sans MS', 'Comic Sans', Chalkboard, 'Marker Felt',
+          sans-serif;
+        font-weight: 700;
+        font-size: 3.6875rem;
+        color: rgb(214, 76, 12);
+        line-height: 1.3;
+        font-style: normal;
+      "
+    >
+      <div
+        data-cvent-id="close"
+        class="DownloadCalendarDialog__closeDialog___29xnF"
+        tabindex="0"
+        role="button"
+      >
+        <span class="Icons-All__container___O_K-B"
+          ><span
+            class="Icons-All__closeDeleteFilled___3mMTd Icons-All__icon___3JBsx"
+            role="img"
+            aria-hidden="true"
+          ></span
+        ></span>
+      </div>
+      Add to Calendar
+    </h2>
+  </div>
+</div>
